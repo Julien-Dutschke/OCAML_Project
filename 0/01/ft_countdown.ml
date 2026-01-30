@@ -1,14 +1,13 @@
-let print_null () = print_int 0
+let rec ft_countdown (value: int) =
+    if (value <= 0) then (
+        print_int 0;
+        print_char '\n';
+    ) else (
+        print_int value;
+        print_char '\n';
+        ft_countdown (value - 1)
+    )
 
-let print_number (x : int) = print_int x ; print_char '\n'
-
-let rec ft_decrem (value : int) =
-  match value with
-  | 0 ->
-      print_null ()
-  | otherValue ->
-      print_number otherValue;
-      ft_decrem (otherValue - 1)
 
 let () =
-  ft_decrem 10
+    ft_countdown 0
